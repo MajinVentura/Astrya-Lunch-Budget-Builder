@@ -323,6 +323,8 @@ function toggleBudgetItem(item) {
     const newTotal = budgetTotal() + item.price;
     if (newTotal > budgetLimit + 0.001) return;
     budgetSelected.push(item);
+    const searchEl = document.getElementById('budgetSearch');
+    if (searchEl) searchEl.value = '';
   }
   updateBudgetSidebar();
   renderBudgetAffordable();
